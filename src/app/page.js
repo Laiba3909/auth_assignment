@@ -1,25 +1,16 @@
-'use client'
-import './style.css'
-import Image from 'next/image';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import SignUp from "./SignUp/page";
-import Login from './login/page';
-import Dashboard from "./dashboard/page";
+import './style.css';
+import Link from 'next/link';
 
 function App() {
   return (
     <div>
-
       <div className='box1'>
-     
         <div className="box2">
-          <Router>
-            <Routes>
-              <Route exact path="/" element={<SignUp />} />
-              <Route exact path="/Login" element={<Login />} />
-              <Route exact path="/dashboard" element={<Dashboard />} />
-            </Routes>
-          </Router>
+          <h2>Welcome to Our Website</h2>
+          <button>
+          <Link href="/SignUp">Sign Up</Link>
+          </button>
+        
         </div>
       </div>
     </div>
@@ -27,3 +18,4 @@ function App() {
 }
 
 export default App;
+

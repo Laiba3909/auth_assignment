@@ -33,6 +33,7 @@ const Dashboard = () => {
   }
 
   return (
+    <div><h1 className="head">Dashboard</h1>
     <div className="boxno1">
       <div className="boxno2">
         <h2 className="message">Welcome, {user?.displayName || "User"} 👋</h2>
@@ -41,6 +42,7 @@ const Dashboard = () => {
           <button onClick={handleLogout} className="button">Logout</button>
         </div>
       </div>
+    </div>
     </div>
   );
 };

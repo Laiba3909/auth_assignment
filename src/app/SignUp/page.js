@@ -1,28 +1,30 @@
 'use client'
+import '../style.css';
 import { useState } from "react";
 import { auth } from "../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
+
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleSignUp = async (e) => {
     e.preventDefault();
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      navigate("/dashboard");
+      router.push("/dashboard");
     } catch (error) {
       alert(error.message);
     }
   };
 
   return (
-    <div>
-       <Image
-      className='sign'
+    <div className='box2'>
+      <Image
+        className='sign'
         src="/sign.png"  
         alt="SignUp"    
         width={500}                   
